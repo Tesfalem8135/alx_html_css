@@ -1,350 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smileschool</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* CSS Variables */
-        :root {
-            --primary-color: #FF6565;
-            --secondary-color: #071629;
-            --white: #FFFFFF;
-            --light-gray: #F2F2F2;
-            --font-main: 'Source Sans Pro', sans-serif;
-        }
-
-        /* Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-main);
-            color: var(--secondary-color);
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Typography */
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        p {
-            margin-bottom: 1rem;
-        }
-
-        .section-title span {
-            color: var(--primary-color);
-        }
-
-        /* Buttons */
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: var(--white);
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #E05555;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Header */
-        .header {
-            background-color: #2c3e50;
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            color: var(--white);
-            text-align: center;
-            padding: 2rem 0;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 5rem;
-        }
-
-        .logo {
-            height: 40px;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .hero-content {
-            max-width: 600px;
-            margin: 0 auto;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        /* Sections */
-        .section {
-            padding: 5rem 0;
-            text-align: center;
-        }
-
-        .section-what-we-do {
-            background-color: var(--white);
-        }
-
-        .section-testimonial {
-            background-color: var(--light-gray);
-        }
-
-        /* Grid Layout */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .grid-item {
-            background-color: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Testimonial */
-        .testimonial-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 3rem;
-            text-align: left;
-        }
-
-        .testimonial-content img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        blockquote {
-            font-style: italic;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .author {
-            font-weight: bold;
-        }
-
-        .title {
-            color: #666;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .social-icons a {
-            color: var(--white);
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            color: var(--primary-color);
-        }
-
-        .copyright {
-            margin-top: 2rem;
-            opacity: 0.8;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .testimonial-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nav-links {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .hero-content {
-                padding: 0 1rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmileSchool</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/4a2b055604.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo-container">
-                    <img src="https://via.placeholder.com/150x50?text=SmileSchool" alt="Smileschool logo" class="logo">
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#">COURSES</a></li>
-                    <li><a href="#">PRICING</a></li>
-                    <li><a href="#">LOGIN</a></li>
-                </ul>
-            </nav>
-            <div class="hero-content">
-                <h1>Get schooled</h1>
-                <p>SMILES GRIN LAUGH</p>
-                <button class="btn-primary">REGISTER FOR FREE</button>
-            </div>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <img src="https://fakeimg.pl/100x50?text=logo" alt="SmileSchool Logo" />
+      <ul>
+        <li><a href="#">COURSE</a></li>
+        <li><a href="#">PRICING</a></li>
+        <li><a href="#">LOGIN</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Get schooled</h1>
+    <div class="tags">
+      <span>SMILES</span>
+      <span>GRIN</span>
+      <span>LAUGH</span>
+    </div>
+    <button>REGISTER FOR FREE</button>
+  </section>
+
+  <!-- Pros Section -->
+  <section class="pros">
+    <h2>Learn from the pros</h2>
+    <div class="instructors">
+      <article>
+        <img src="./images/1.png" alt="Phillip Massey">
+        <h3>Phillip Massey</h3>
+        <p>« Smile of the year » 2018 - 2019</p>
+      </article>
+      <article>
+        <img src="./images/6.png" alt="Nannie Lawrence">
+        <h3>Nannie Lawrence</h3>
+        <p>Best « little smile » 2017</p>
+      </article>
+      <article>
+        <img src="./images/7.png" alt="Bruce Walters">
+        <h3>Bruce Walters</h3>
+        <p>Best « Friend Smile » live performance 2019</p>
+      </article>
+      <article>
+        <img src="./images/8.png" alt="Henry Hughes">
+        <h3>Henry Hughes</h3>
+        <p>« 24h smiles » winner 2016 - 2019</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Quote/Testimonial Section -->
+  <section class="testimonial">
+    <img src="./images/Bitmap.png" alt="Person smiling">
+    <blockquote>
+      « Those tutorials are concise and go straight to the point. I can’t think of a better place to learn smiling. And it’s so fun!
+    </blockquote>
+    <h3>NAME</h3>
+    <p>weather presenter</p>
+  </section>
+
+  <!-- Tutorials Section -->
+  <section class="tutorials">
+    <h2>Most popular tutorials</h2>
+    <div class="tutorial-list">
+      <!-- Repeat this block -->
+      <article>
+        <img src="./images/Bitmap (1).png" alt="Diagonal Smile Tutorial">
+        <h3>Diagonal Smile</h3>
+        <p>Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
+        <div class="author">
+          <img src="./images/1.png" alt="Phillip Massey">
+          <h4>Phillip Massey</h4>
         </div>
-    </header>
-
-    <main>
-        <section class="section section-what-we-do">
-            <div class="container">
-                <h2 class="section-title"><span>Learn</span> from the pros</h2>
-                <div class="grid-container">
-                    <div class="grid-item">
-                        <img src="https://via.placeholder.com/150" alt="Instructor 1">
-                        <h3>Phillip Massey</h3>
-                        <p>« Smile of the year » 2018 - 2019</p>
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://via.placeholder.com/150" alt="Instructor 2">
-                        <h3>Nannie Lawrence</h3>
-                        <p>Best « little smile » 2017</p>
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://via.placeholder.com/150" alt="Instructor 3">
-                        <h3>Bruce Walters</h3>
-                        <p>Best « Friend Smile » live performance 2019</p>
-                    </div>
-                    <div class="grid-item">
-                        <img src="https://via.placeholder.com/150" alt="Instructor 4">
-                        <h3>Henry Hughes</h3>
-                        <p>« 24h smiles » winner 2016 - 2019</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-testimonial">
-            <div class="container">
-                <div class="testimonial-content">
-                    <img src="https://via.placeholder.com/150" alt="Testimonial author">
-                    <div>
-                        <blockquote>
-                            « Those tutorials are concise and go straight to the point. I can't think of a better
-                            place to learn smiling. And it's so fun!
-                        </blockquote>
-                        <p class="author">Person Name</p>
-                        <p class="title">weather presenter</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="https://via.placeholder.com/150x50?text=SmileSchool" alt="Smileschool logo">
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <p class="copyright">©smileschool 2020</p>
-            </div>
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
         </div>
-    </footer>
+        <p>8 min</p>
+      </article>
+
+      <!-- Repeat 3 more tutorials: Happy Smile, Natural Smile, Sad Smile -->
+      <!-- Just change image, title, and maybe text if needed -->
+    </div>
+  </section>
+
+  <!-- Membership Section -->
+  <section class="membership">
+    <h2>Free membership</h2>
+    <div class="benefits">
+      <article>
+        <img src="./images/smile.svg" alt="">
+        <h3>Lorem Ipsum</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </article>
+      <article>
+        <img src="./images/smile.svg" alt="">
+        <h3>Lorem Ipsum</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </article>
+      <article>
+        <img src="./images/smile.svg" alt="">
+        <h3>Lorem Ipsum</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </article>
+      <article>
+        <img src="./images/smile.svg" alt="">
+        <h3>Lorem Ipsum</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </article>
+    </div>
+    <button>REGISTER FOR FREE</button>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq">
+    <h2>F.A.Q</h2>
+    <div class="faq-columns">
+      <div class="faq-group">
+        <h3>How does this work?</h3>
+        <p>Lorem ipsum dolor sit amet...</p>
+        <h3>How does this work?</h3>
+        <p>Lorem ipsum dolor sit amet...</p>
+      </div>
+      <div class="faq-group">
+        <h3>How does this work?</h3>
+        <p>Lorem ipsum dolor sit amet...</p>
+        <h3>How does this work?</h3>
+        <p>Lorem ipsum dolor sit amet...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <img src="https://fakeimg.pl/100x50?text=logo" alt="SmileSchool logo" />
+      <div class="social-icons">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+      </div>
+    </div>
+    <p>©smileschool 2020</p>
+  </footer>
+
 </body>
 </html>
